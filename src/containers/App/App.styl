@@ -1,0 +1,113 @@
+$width = 600px
+$heightWindow = 400px
+$heightHeader = 50px
+
+$color1 = #537c8e
+$color2 = #2ebdbd
+$color3 = #eff1e4
+$color4 = #B1BA5C
+$color5 = #6f7b3d
+$color6 = #4b572b
+
+.app {
+  width 100vw
+  height 100vh
+  display flex
+  justify-content center
+}
+
+.window {
+  z-index 2
+  background-color $color3
+  border-radius 10px
+  width $width
+  height $heightWindow
+  margin-top: 80px
+  box-shadow: 8px 8px 4px 0 rgba(0, 0, 0, 0.3)
+}
+
+.header {
+  border-radius 10px 10px 0 0
+  width $width - 40px
+  height $heightHeader
+  background-color $color1
+  padding 20px
+}
+
+.input {
+  padding 4px
+  margin 4px
+  font-size 20px
+  height 24px
+  border-radius 4px
+  box-shadow 4px 4px 4px rgba(0, 0, 0, 0.3)
+  vertical-align top
+  background-color $color3
+  outline: none
+}
+
+.btn {
+  background-color $color4
+  vertical-align top
+  border: 2px solid $color5;
+  padding 8px
+  margin 4px
+  height 36px
+  border-radius 4px
+  box-shadow 4px 4px 4px rgba(0, 0, 0, 0.4)
+  outline: none
+  transition: 0.3s;
+
+  &:hover {
+    background-color $color5
+    box-shadow 4px 4px 4px rgba(0, 0, 0, 0.5)
+  }
+
+  &:active {
+    border: 2px solid $color6;
+    background-color $color6
+    box-shadow 4px 4px 4px rgba(0, 0, 0, 0.8)
+  }
+}
+
+.logo {
+  display inline-block
+  float right
+  background-image url(https://www.picpng.com/images/large/thermometer-degree-hot-summer-hd-png-93790)
+  width 30px
+  height 60px
+  background-size cover
+}
+
+.loading {
+  animation-name rotation
+  animation-duration: 800ms
+  animation-iteration-count: infinite
+  animation-timing-function linear
+}
+
+@keyframes rotation {
+  0% {
+    transform: translate(0%, 0%) rotate(0deg)
+  }
+  100% {
+    transform: translate(0%, 0%) rotate(-360deg)
+  }
+}
+
+.cold {
+  background-color #62b0ff
+}
+
+.hot {
+  background-color #ffc86d
+}
+
+.footer {
+  z-index 1
+  position absolute
+  background-image url(http://forecast.totome.ru/city.png)
+  top 60vh
+  width 100vw
+  height 40vh
+}
